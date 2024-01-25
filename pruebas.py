@@ -26,7 +26,7 @@ percentage_bachelors = round((len(bachelors_df) / len(df)) *100, 2)
 # What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
 advanced_education_df = ((df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])) & (df['salary'] == '>50K'))
 percent_advanced_education_above50k = round((len(df[advanced_education_df]) / len(df)) * 100, 2)
-#print(percent_advanced_education_above50k)
+print(percent_advanced_education_above50k)
 # What percentage of people without advanced education make more than 50K?
 basic_education_df = ((~df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])) & (df['salary'] == '>50K'))
 percent_basic_education_above50k = round((len(df[basic_education_df]) / len(df)) * 100, 2)
@@ -60,4 +60,4 @@ highest_earning_country_percentage = round(len(df[(df["native-country"] == highe
 rich_indians = df[(df["native-country"] == "India") & (df["salary"] == max_salary)]
 rich_indians_occupations = rich_indians["occupation"].value_counts().idxmax()
 top_IN_occupation = df[(df["native-country"] == "India") & (df["salary"] == max_salary)]
-print(rich_indians_occupations)
+#print(rich_indians_occupations)
